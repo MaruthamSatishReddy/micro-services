@@ -1,0 +1,5 @@
+FROM openjdk:8-jre-alpine
+WORKDIR /temp
+EXPOSE 8084
+ADD target/CATEGORY-API-V2-ETB_V.1.0.jar CATEGORY-API-V2-ETB_V.1.0.jar
+ENTRYPOINT ["java","-jar","CATEGORY-API-V2-ETB_V.1.0.jar"]

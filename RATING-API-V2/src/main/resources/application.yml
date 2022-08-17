@@ -1,0 +1,8 @@
+server:
+  error:
+    include-stacktrace: on-trace-param
+  port: 9095
+spring:
+  application:
+    name: rating-service
+  

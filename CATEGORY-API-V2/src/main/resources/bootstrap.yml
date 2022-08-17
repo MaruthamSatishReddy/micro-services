@@ -1,0 +1,10 @@
+spring:  application:    name: category-service      cloud:    config:      enabled: true      discovery:        enabled: true        service-id: config-server    gateway:      globalcors:        corsConfigurations:          '[/**]':            allowedOrigins: "*"                 #profile: dev
+management:
+   endpoint:
+    health:
+      show-details: always
+      
+   endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: product-service
+    
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: config-server
+      #profile: dev
+ 
+management:
+  health:    circuitbreakers:      enabled: true
+  endpoint:    health:      show-details: always
+      
+  endpoints:
+    web:
+      exposure:
+        include: '*'
