@@ -1,9 +1,8 @@
-
 management:
   endpoint:
     health:
       show-details: always
-      
+
   endpoints:
     web:
       exposure:
@@ -11,12 +10,16 @@ management:
 spring:
   application:
     name: user-service
-    
-  cloud:    config:
+
+  cloud:
+    config:
       enabled: true
       
-      discovery:        enabled: true        service-id: config-server
+      discovery:
+        enabled: true
+        service-id: config-server
       profile: dev
               
         
-          
+     
+     

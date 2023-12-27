@@ -15,30 +15,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
 @RestController
 @RequestMapping("/api/user")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserRegisterController {
-@Autowired
-public UserRepository userRepository;
+    @Autowired
+    public UserRepository userRepository;
 
-@Value("${config.value}")
-private String configValue;
+    @Value("${config.value}")
+    private String configValue;
 
-	@PostMapping("/signUp")
-	public ResponseEntity<User> userSignUp(@RequestBody User user) {
-		User userDetails = userRepository.insert(user);
-		return new ResponseEntity<User>(userDetails,HttpStatus.CREATED);
-	}
-	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/signIn/{userName}/{password}")
-	public Optional<User> userSignIn(@PathVariable("userName") String userName,@PathVariable("password") String password) {
-    Optional<User> userDetails = userRepository.findByUserNameAndUserPassword(userName,password);
-    return userDetails;
-	}
-	@GetMapping("/configServer")
-	public String testConfigServer() {
-		return configValue;
-	}
+    @PostMapping("/signUp")
+    public ResponseEntity<User> userSignUp(@RequestBody User user) {
+        User userDetails = userRepository.insert(user);
+        return new ResponseEntity<User>(userDetails, HttpStatus.CREATED);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/signIn/{userName}/{password}")
+    public Optional<User> userSignIn(@PathVariable("userName") String userName, @PathVariable("password") String password) {
+        Optional<User> userDetails = userRepository.findByUserNameAndUserPassword(userName, password);
+        return userDetails;
+    }
+
+    @GetMapping("/configServer")
+    public String testConfigServer() {
+        return configValue;
+    }
 }

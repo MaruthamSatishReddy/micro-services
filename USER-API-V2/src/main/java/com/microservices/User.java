@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.microservices;
 
@@ -24,10 +24,10 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class User {
- @Id
- private String userId;
- private String userName;
- private String useEamil;
- private String userPassword;
+    @Id
+    private String userId;
+    private String userName;
+    private String useEamil;
+    private String userPassword;
 
- }
+}

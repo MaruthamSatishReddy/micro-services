@@ -1,5 +1,0 @@
-com\microservices\UserApiV2Application.class
-com\microservices\UserRepository.class
-com\microservices\User.class
-com\microservices\User$UserBuilder.class
-com\microservices\UserRegisterController.class
